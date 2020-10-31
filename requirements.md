@@ -1,7 +1,7 @@
 # V2 Requirements
-- []
-- []
-- []
+- [] It should have a function to add a todo
+- [] It should have a function to edit a todo
+- [] It should have a function to delete a todo
 
 # V1 Requitements
 - [x] It should have a place to store todos
