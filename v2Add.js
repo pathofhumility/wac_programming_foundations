@@ -2,7 +2,7 @@
  * into the function and added to the todos array.
  */
 
- todos = ["Item 2", "Item 3", "Item 4", "another item"]
+todos = ["Item 2", "Item 3", "Item 4", "another item"]
 
 // function add() {
 function add(todo) { 
