@@ -1,4 +1,6 @@
-todos = ["Item 2", "Item 3", "Item 4", "another item"]
+todos = ["Item 1", "Item 2", "Item 3", "Item 4"];
+
+console.log('My todos;', todos);
 
 function add(todo) { 
   todos.push(todo);
@@ -6,7 +8,7 @@ function add(todo) {
 }
 
 function edit(index, todo) {
-  todos[index] = todo
+  todos[index] = todo;
   console.log(todos);
 }
 
