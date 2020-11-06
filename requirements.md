@@ -1,3 +1,11 @@
+# V4 Requirements
+- [] It should have a function to toggle a todo.
+
+# V3 Requirements
+- [X] We should initiallize the todos variable with objects.
+- [X] The add function should add objects.
+- [X] The edit function should edit objects.
+
 # V2 Requirements
 - [X] It should have a function to add a todo
 - [X] It should have a function to edit a todo
