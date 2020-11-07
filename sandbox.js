@@ -1,3 +1,5 @@
+"use strict";
+
 var myArray = [{name: 'Gordon'}];
 
 function exampleFunction(thing) {

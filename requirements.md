@@ -1,5 +1,5 @@
 # V4 Requirements
-- [] It should have a function to toggle a todo.
+- [X] It should have a function to toggle a todo.
 
 # V3 Requirements
 - [X] We should initiallize the todos variable with objects.

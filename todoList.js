@@ -1,3 +1,5 @@
+"use strict";
+
 var todos = [{todoText: 'Item 1', completed: false}];
 
 console.log('My todos;', todos);
