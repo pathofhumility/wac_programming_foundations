@@ -1,3 +1,13 @@
+# V6 Requirements
+- [X] It should have a function toggleAll that toggles all todos.
+- [X] If anything is false, make everything true.
+- [X] Otherwise(everything is true), make everything false.
+
+# V5 Requirements
+- [X] It should have a function displayTodos for displaying todos.
+- [X] displayTodos should display todoText property.
+- [X] displayTodos should display completed property.
+
 # V4 Requirements
 - [X] It should have a function to toggle a todo.
 
