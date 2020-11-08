@@ -2,8 +2,6 @@
 
 var todos = [{todoText: 'Item 1', completed: false}];
 
-displayTodos();
-
 function displayTodos() {
   console.log('My todos:');
   for(let i = 0; i < todos.length; i++) {
@@ -32,44 +30,24 @@ function toggle(index) {
 }
 
 function toggleAll() {
-  let completed = false;
+  let completedTodos = false;
 
   for(let i = 0; i < todos.length; i++) {
-    if(todos[i].completed === false) {
-      completed = true;
+    // logic: if any todo is incomplete(false), all will be toggled to complete(true)
+    if(!todos[i].completed) {
+      completedTodos = true;
       break;
     }
   }
 
   for(let i = 0; i < todos.length; i++) {
-    todos[i].completed = completed;
+    todos[i].completed = completedTodos;
   }
   displayTodos();
 }
 
-function weirdToggleAll() {
-  var completedTodos = 0;
-  var allCompleted = true;
+var toggleAllButton    = document.getElementById('toggle-all-button');
+var displayTodosButton = document.getElementById('display-todos-button');
 
-  for (var i = 0; i < todos.length; i++) {
-    if (todos[i].completed !== false) {
-      completedTodos++;
-    }
-
-    if (completedTodos !== i + 1) {
-      allCompleted = false;
-    }
-  }
-
-  if (allCompleted === true) {
-    for (var i = 0; i < todos.length; i++) {
-      todos[i].completed = false;
-    }
-  } else {
-    for (var i = 0; i < todos.length; i++) {
-      todos[i].completed = true;  
-    }
-  }
-
-  displayTodos();
-}
+toggleAllButton.addEventListener('click', toggleAll);
+displayTodosButton.addEventListener('click', displayTodos);

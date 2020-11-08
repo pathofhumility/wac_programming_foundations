@@ -1,3 +1,9 @@
+# V7 Requirements
+- [X] It should have a displayTodos button.
+- [X] The displayTodos button should run the displayTodos function.
+- [X] It should have a toggleAll button.
+- [X] The toggleAll button should run the toggleAll function.
+
 # V6 Requirements
 - [X] It should have a function toggleAll that toggles all todos.
 - [X] If anything is false, make everything true.
