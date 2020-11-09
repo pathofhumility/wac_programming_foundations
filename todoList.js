@@ -1,11 +1,33 @@
 "use strict";
 
-var todos = [{todoText: 'Item 1', completed: false}];
+var todos = [];
 
 function displayTodos() {
-  console.log('My todos:');
+  let todo;
+  let completed;
+  let todoLi;
+  let xButton;
+  let todosListUl = document.getElementById('todos-list-ul');
+
+  todosListUl.innerHTML = "";
+
   for(let i = 0; i < todos.length; i++) {
-    console.log(`${i + 1}.) ${todos[i].todoText} Completed: ${todos[i].completed}`);
+    todoLi = document.createElement('li');
+
+    xButton = document.createElement('button');
+    xButton.innerText = 'x';
+    xButton.setAttribute('id', i);
+    // alternate way to set id
+    // xButton.id = i;
+    xButton.addEventListener('click', remove);
+
+    completed = todos[i].completed ? '[x]' : '[ ]';
+    // todoLi.innerText = `${completed} ${todos[i].todoText}`;
+    todo = document.createTextNode(` ${completed} ${todos[i].todoText}`);
+    todoLi.appendChild(xButton);
+    todoLi.appendChild(todo);
+
+    todosListUl.appendChild(todoLi);
   }
 }
 
@@ -25,10 +47,9 @@ function edit() {
   displayTodos();  
 }
 
-function remove() {
-  let index = deleteInputIndex.value;
+function remove(event) {
+  let index = event.currentTarget.id;
   todos.splice(index, 1);
-  deleteInputIndex.value = "";
   displayTodos();
 }
 
@@ -68,13 +89,13 @@ var editInputIndex     = document.getElementById('edit-index');
 var editInput          = document.getElementById('edit-input');
 editTodoButton.addEventListener('click', edit);
 
-var deleteTodoButton   = document.getElementById('delete-todo-button');
-var deleteInputIndex   = document.getElementById('delete-index');
-deleteTodoButton.addEventListener('click', remove);
+// var deleteTodoButton   = document.getElementById('delete-todo-button');
+// var deleteInputIndex   = document.getElementById('delete-index');
+// deleteTodoButton.addEventListener('click', remove);
 
 var toggleTodoButton   = document.getElementById('toggle-todo-button');
 var toggleInputIndex   = document.getElementById('toggle-index');
 toggleTodoButton.addEventListener('click', toggle);
 
-var displayTodosButton = document.getElementById('display-todos-button');
-displayTodosButton.addEventListener('click', displayTodos);
+// var displayTodosButton = document.getElementById('display-todos-button');
+// displayTodosButton.addEventListener('click', displayTodos);

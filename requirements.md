@@ -1,3 +1,16 @@
+# V11 Requirements
+- [] Each todo should have its own toggle button.
+- [] The toggle buttons should have functionality.
+
+# V10 Requirements
+- [X] Each todo should have its own remove button.
+- [X] The remove buttons should have functionality.
+
+# V9 Requirements
+- [X] There should be an li for each todo.
+- [X] Each li should display todoText.
+- [X] Each li should display completed.
+
 # V8 Requirements
 - [X] There should be a working button for adding a todo.
 - [X] There should be a working button for editing a todo.
