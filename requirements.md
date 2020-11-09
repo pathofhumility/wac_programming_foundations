@@ -1,3 +1,9 @@
+# V8 Requirements
+- [X] There should be a working button for adding a todo.
+- [X] There should be a working button for editing a todo.
+- [X] There should be a working button for removing a todo.
+- [X] There should be a working button for toggling a todo.
+
 # V7 Requirements
 - [X] It should have a displayTodos button.
 - [X] The displayTodos button should run the displayTodos function.
