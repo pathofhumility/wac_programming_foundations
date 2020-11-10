@@ -17,7 +17,7 @@ function displayTodos() {
 
     xButton = document.createElement('button');
     xButton.innerText = 'x';
-    xButton.setAttribute('id', i);
+    xButton.setAttribute('id', `remove-${i}`);
     // alternate way to set id
     // xButton.id = i;
     xButton.addEventListener('click', remove);
@@ -55,7 +55,7 @@ function edit() {
 }
 
 function remove(event) {
-  let index = event.currentTarget.id;
+  let index = event.currentTarget.id.split('-').pop();
   todos.splice(index, 1);
   displayTodos();
 }
