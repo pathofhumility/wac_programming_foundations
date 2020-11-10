@@ -7,6 +7,7 @@ function displayTodos() {
   let completed;
   let todoLi;
   let xButton;
+  let toggleButton;
   let todosListUl = document.getElementById('todos-list-ul');
 
   todosListUl.innerHTML = "";
@@ -21,11 +22,17 @@ function displayTodos() {
     // xButton.id = i;
     xButton.addEventListener('click', remove);
 
+    toggleButton = document.createElement('button');
+    toggleButton.innerText = 'Toggle';
+    toggleButton.setAttribute('id', `toggle-${i}`);
+    toggleButton.addEventListener('click', toggle);
+
     completed = todos[i].completed ? '[x]' : '[ ]';
     // todoLi.innerText = `${completed} ${todos[i].todoText}`;
-    todo = document.createTextNode(` ${completed} ${todos[i].todoText}`);
-    todoLi.appendChild(xButton);
+    todo = document.createTextNode(` ${completed} ${todos[i].todoText} `);
+    todoLi.appendChild(toggleButton);
     todoLi.appendChild(todo);
+    todoLi.appendChild(xButton);
 
     todosListUl.appendChild(todoLi);
   }
@@ -53,10 +60,9 @@ function remove(event) {
   displayTodos();
 }
 
-function toggle() {
-  let index = toggleInputIndex.value;
+function toggle(event) {
+  let index = event.currentTarget.id.split('-').pop();
   todos[index].completed = !todos[index].completed;
-  toggleInputIndex.value = "";
   displayTodos();
 }
 
@@ -93,9 +99,9 @@ editTodoButton.addEventListener('click', edit);
 // var deleteInputIndex   = document.getElementById('delete-index');
 // deleteTodoButton.addEventListener('click', remove);
 
-var toggleTodoButton   = document.getElementById('toggle-todo-button');
-var toggleInputIndex   = document.getElementById('toggle-index');
-toggleTodoButton.addEventListener('click', toggle);
+// var toggleTodoButton   = document.getElementById('toggle-todo-button');
+// var toggleInputIndex   = document.getElementById('toggle-index');
+// toggleTodoButton.addEventListener('click', toggle);
 
 // var displayTodosButton = document.getElementById('display-todos-button');
 // displayTodosButton.addEventListener('click', displayTodos);

@@ -1,6 +1,6 @@
 # V11 Requirements
-- [] Each todo should have its own toggle button.
-- [] The toggle buttons should have functionality.
+- [X] Each todo should have its own toggle button.
+- [X] The toggle buttons should have functionality.
 
 # V10 Requirements
 - [X] Each todo should have its own remove button.
