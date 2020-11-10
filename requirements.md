@@ -1,3 +1,9 @@
+# V12 Requirements
+- [X] Each todo should have its own edit button.
+- [X] The edit button should have functionality.
+- [X] If edit input "ok" with blank, don't change todo.
+- [X] If edit "cancel", don't change todo.
+
 # V11 Requirements
 - [X] Each todo should have its own toggle button.
 - [X] The toggle buttons should have functionality.

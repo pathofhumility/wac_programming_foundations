@@ -6,11 +6,22 @@ function displayTodos() {
   let todo;
   let completed;
   let todoLi;
+  let toggleAllButton;
   let xButton;
   let toggleButton;
+  let editButton;
   let todosListUl = document.getElementById('todos-list-ul');
 
   todosListUl.innerHTML = "";
+
+  toggleAllButton = document.createElement('button');
+  toggleAllButton.innerText = 'Toggle All';
+  toggleAllButton.addEventListener('click', toggleAll);
+  var toggleDiv = document.getElementById('toggle-all-div');
+  toggleDiv.innerHTML = "";
+  if (todos.length !== 0) {
+    toggleDiv.appendChild(toggleAllButton);
+  }
 
   for(let i = 0; i < todos.length; i++) {
     todoLi = document.createElement('li');
@@ -27,10 +38,16 @@ function displayTodos() {
     toggleButton.setAttribute('id', `toggle-${i}`);
     toggleButton.addEventListener('click', toggle);
 
+    editButton = document.createElement('button');
+    editButton.innerText = 'Edit';
+    editButton.setAttribute('id', `edit-${i}`);
+    editButton.addEventListener('click', edit);
+
     completed = todos[i].completed ? '[x]' : '[ ]';
     // todoLi.innerText = `${completed} ${todos[i].todoText}`;
     todo = document.createTextNode(` ${completed} ${todos[i].todoText} `);
     todoLi.appendChild(toggleButton);
+    todoLi.appendChild(editButton);
     todoLi.appendChild(todo);
     todoLi.appendChild(xButton);
 
@@ -45,12 +62,12 @@ function add() {
   displayTodos();
 }
 
-function edit() {
-  let index = editInputIndex.value;
-  let editedTodoText = editInput.value;
-  todos[index].todoText = editedTodoText;
-  editInputIndex.value = "";
-  editInput.value = "";
+function edit(event) {
+  let index = event.currentTarget.id.split('-').pop(); 
+  let editedTodoText = window.prompt('Please edit the todo.'); 
+  if (editedTodoText !== null && editedTodoText !== "") {
+    todos[index].todoText = editedTodoText;
+  }
   displayTodos();  
 }
 
@@ -83,17 +100,17 @@ function toggleAll() {
   displayTodos();
 }
 
-var toggleAllButton    = document.getElementById('toggle-all-button');
-toggleAllButton.addEventListener('click', toggleAll);
+// var toggleAllButton    = document.getElementById('toggle-all-button');
+// toggleAllButton.addEventListener('click', toggleAll);
 
 var addTodoButton      = document.getElementById('add-todo-button');
 var addInput           = document.getElementById('add-input');
 addTodoButton.addEventListener('click', add);
 
-var editTodoButton     = document.getElementById('edit-todo-button');
-var editInputIndex     = document.getElementById('edit-index');
-var editInput          = document.getElementById('edit-input');
-editTodoButton.addEventListener('click', edit);
+// var editTodoButton     = document.getElementById('edit-todo-button');
+// var editInputIndex     = document.getElementById('edit-index');
+// var editInput          = document.getElementById('edit-input');
+// editTodoButton.addEventListener('click', edit);
 
 // var deleteTodoButton   = document.getElementById('delete-todo-button');
 // var deleteInputIndex   = document.getElementById('delete-index');
